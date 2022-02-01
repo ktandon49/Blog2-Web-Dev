@@ -1,0 +1,17 @@
+<!--The View Messages Page Extended from base.html-->
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Some Cool Messages{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <!-- Looping over random (handle, message) pairs and displaying them -->
+    {% for m in rand_messages %}
+      <br>
+      <!-- Displaying the message -->
+      <b>{{m[1]}}</b>
+      <!-- Displaying the handle -->
+      <p style="font-style: italic; font-size: small; margin-top: 0%;"> ~ {{m[0]}}</p>
+    {%  endfor %}
+{% endblock %}
